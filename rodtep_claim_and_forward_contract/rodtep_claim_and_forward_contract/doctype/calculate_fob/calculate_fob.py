@@ -23,6 +23,7 @@ class CalculateFOB(Document):
 				"rodtep_rate": rate_details.get("custom_rodtep_rate"),
 				"duty_drawback_rate": rate_details.get("custom_duty_drawback_rate")
 			})
+	
 	def create_jv(self):
 		if self.total_duty_drawback:
 			drawback_receivable_account = frappe.get_value("Company", self.company, "custom_duty_drawback_receivable_account")

@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-06 11:10:23.936641",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_details_section",
+  "item",
+  "amount",
+  "column_break_mcbw",
+  "item_name",
+  "base_amount",
+  "exim_section",
+  "freight",
+  "insurance",
+  "duty_drawback_rate",
+  "rodtep_rate",
+  "column_break_mzoh",
+  "fob_value",
+  "fob_value_inr",
+  "duty_drawback_amount",
+  "rodtep_value"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_details_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_mcbw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Amount (INR)"
+  },
+  {
+   "fieldname": "exim_section",
+   "fieldtype": "Section Break",
+   "label": "Exim"
+  },
+  {
+   "fieldname": "fob_value",
+   "fieldtype": "Currency",
+   "label": "FOB Value"
+  },
+  {
+   "fieldname": "insurance",
+   "fieldtype": "Float",
+   "label": "Insurance"
+  },
+  {
+   "fieldname": "rodtep_rate",
+   "fieldtype": "Float",
+   "label": "Rodtep Rate"
+  },
+  {
+   "fieldname": "column_break_mzoh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fob_value_inr",
+   "fieldtype": "Float",
+   "label": "FOB Value (INR)"
+  },
+  {
+   "fieldname": "duty_drawback_rate",
+   "fieldtype": "Float",
+   "label": "Duty Drawback Rate"
+  },
+  {
+   "fieldname": "duty_drawback_amount",
+   "fieldtype": "Float",
+   "label": "Duty Drawback Amount"
+  },
+  {
+   "fieldname": "rodtep_value",
+   "fieldtype": "Currency",
+   "label": "Rodtep Value"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount (INR)"
+  },
+  {
+   "fetch_from": "item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "freight",
+   "fieldtype": "Float",
+   "label": "Freight"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-06 15:38:22.423625",
+ "modified_by": "Administrator",
+ "module": "Rodtep Claim And Forward Contract",
+ "name": "Calculate FOB Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

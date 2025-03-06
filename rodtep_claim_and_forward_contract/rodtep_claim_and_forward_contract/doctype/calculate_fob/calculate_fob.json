@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-06 11:08:46.941827",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_29op",
+  "sales_invoice",
+  "amended_from",
+  "company",
+  "customer",
+  "column_break_eqhj",
+  "currency",
+  "conversion_rate",
+  "posting_date",
+  "section_break_qwew",
+  "sales_invoice_items",
+  "section_break_rloc",
+  "total_fob_value",
+  "insurance",
+  "total_duty_drawback",
+  "column_break_gjqo",
+  "freight",
+  "total_rodtep",
+  "duty_drawback_jv",
+  "rodtep_jv"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_29op",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Calculate FOB",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_invoice_items",
+   "fieldtype": "Table",
+   "label": "Sales Invoice Items",
+   "options": "Calculate FOB Details"
+  },
+  {
+   "fieldname": "section_break_rloc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_fob_value",
+   "fieldtype": "Currency",
+   "label": "Total FOB Value"
+  },
+  {
+   "fieldname": "insurance",
+   "fieldtype": "Float",
+   "label": "INSURANCE"
+  },
+  {
+   "fieldname": "total_duty_drawback",
+   "fieldtype": "Currency",
+   "label": "Total Duty Drawback"
+  },
+  {
+   "fieldname": "column_break_gjqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freight",
+   "fieldtype": "Float",
+   "label": "Freight"
+  },
+  {
+   "fieldname": "total_rodtep",
+   "fieldtype": "Currency",
+   "label": "Total Rodtep"
+  },
+  {
+   "fieldname": "duty_drawback_jv",
+   "fieldtype": "Link",
+   "label": "Duty Drawback JV",
+   "options": "Journal Entry"
+  },
+  {
+   "fieldname": "rodtep_jv",
+   "fieldtype": "Link",
+   "label": "Rodtep JV",
+   "options": "Journal Entry"
+  },
+  {
+   "fieldname": "column_break_eqhj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_invoice.currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_qwew",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "sales_invoice.conversion_rate",
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fetch_from": "sales_invoice.customer_name",
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-06 16:08:56.615841",
+ "modified_by": "Administrator",
+ "module": "Rodtep Claim And Forward Contract",
+ "name": "Calculate FOB",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

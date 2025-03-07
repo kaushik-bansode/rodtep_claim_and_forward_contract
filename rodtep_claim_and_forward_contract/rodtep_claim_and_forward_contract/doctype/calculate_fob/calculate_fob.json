@@ -14,6 +14,7 @@
   "currency",
   "conversion_rate",
   "posting_date",
+  "shipping_bill_number",
   "section_break_qwew",
   "sales_invoice_items",
   "section_break_rloc",
@@ -137,12 +138,17 @@
    "fieldname": "customer",
    "fieldtype": "Data",
    "label": "Customer"
+  },
+  {
+   "fieldname": "shipping_bill_number",
+   "fieldtype": "Data",
+   "label": "Shipping Bill Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-06 16:08:56.615841",
+ "modified": "2025-03-07 16:06:04.566652",
  "modified_by": "Administrator",
  "module": "Rodtep Claim And Forward Contract",
  "name": "Calculate FOB",

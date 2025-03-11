@@ -63,7 +63,7 @@ class CalculateFOB(Document):
 					self.db_set('duty_drawback_jv',jv.name)
 
 		if self.get('total_rodtep'):
-			meis_receivable_account = frappe.db.get_value("Company", { "company_name": self.company}, "custom_rodtep_receivable_account")
+			meis_receivable_account = frappe.db.get_value("Company", { "company_name": self.company}, "custom_rodtep_receivabale_account")
 			meis_income_account = frappe.db.get_value("Company", { "company_name": self.company}, "custom_rodtep_income_account")
 			meis_cost_center = frappe.db.get_value("Company", { "company_name": self.company}, "custom_rodtep_cost_center")
 			if not meis_receivable_account:
@@ -83,12 +83,12 @@ class CalculateFOB(Document):
 				meis_jv.append("accounts", {
 					"account": meis_receivable_account,
 					"cost_center": meis_cost_center,
-					"debit_in_account_currency": self.total_meis
+					"debit_in_account_currency": self.total_rodtep
 				})
 				meis_jv.append("accounts", {
 					"account": meis_income_account,
 					"cost_center": meis_cost_center,
-					"credit_in_account_currency": self.total_meis
+					"credit_in_account_currency": self.total_rodtep
 				})
 				
 				try:
@@ -100,8 +100,8 @@ class CalculateFOB(Document):
 				else:
 					self.db_set('rodtep_jv',meis_jv.name)
 	def cancel_jv(self):
-		if self.duty_drawback_:
-			jv = frappe.get_doc("Journal Entry", self.duty_drawback_)
+		if self.duty_drawback_jv:
+			jv = frappe.get_doc("Journal Entry", self.duty_drawback_jv)
 			jv.cancel()
 			self.duty_drawback_jv = ''
 		if self.get('rodtep_jv'):

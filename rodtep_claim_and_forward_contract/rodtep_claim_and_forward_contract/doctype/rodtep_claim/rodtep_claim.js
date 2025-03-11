@@ -6,7 +6,7 @@ frappe.ui.form.on('Rodtep Claim', {
 	get_rodtep_entries:function(frm){
 		frm.clear_table("rodtep_details")
 		frappe.call({
-			method : "rodtep_claim_management.rodtep_claim_management.doctype.rodtep_claim.rodtep_claim.journal_entry_list",
+			method : "rodtep_claim_and_forward_contract.rodtep_claim_and_forward_contract.doctype.rodtep_claim.rodtep_claim.journal_entry_list",
 			args:{
 				"start_date":frm.doc.start_date,
 				"end_date":frm.doc.end_date,

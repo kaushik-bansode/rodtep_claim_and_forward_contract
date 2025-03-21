@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-20 17:02:53.138339",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "cancel_amount",
+  "rate",
+  "inr_amount",
+  "column_break_5",
+  "rate_diff",
+  "profit_or_loss",
+  "bank_account",
+  "journal_entry",
+  "create_jv",
+  "cancel_jv"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "cancel_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cancel Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "inr_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "INR Amount",
+   "options": "base_currency"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "rate_diff",
+   "fieldtype": "Float",
+   "label": "Rate Diff",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "profit_or_loss",
+   "fieldtype": "Currency",
+   "label": "Cancellation Profit / Loss",
+   "options": "base_currency",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "bank_account",
+   "fieldtype": "Link",
+   "label": "Bank Account",
+   "options": "Account"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: !doc.journal_entry",
+   "fieldname": "create_jv",
+   "fieldtype": "Button",
+   "label": "Create JV"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: doc.journal_entry",
+   "fieldname": "cancel_jv",
+   "fieldtype": "Button",
+   "label": "Cancel JV"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-20 17:07:31.958290",
+ "modified_by": "Administrator",
+ "module": "Rodtep Claim And Forward Contract",
+ "name": "Forward Contract Cancellation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

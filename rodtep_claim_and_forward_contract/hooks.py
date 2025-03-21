@@ -44,6 +44,11 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+        "Payment Entry": "public/js/doctype_js/payment_entry.js",
+        "Sales Invoice": "public/js/doctype_js/sales_invoice.js",
+    "Journal Entry": "public/js/doctype_js/journal_entry.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -144,6 +149,15 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+        "Payment Entry": {
+                "on_submit": "rodtep_claim_and_forward_contract.api.pe_on_submit",
+                "before_cancel": "rodtep_claim_and_forward_contract.api.pe_on_cancel",
+        },
+        "Journal Entry": {
+            "on_cancel": "rodtep_claim_and_forward_contract.rodtep_claim_and_forward_contract.doc_events.journal_entry.before_cancel",
+        }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -242,13 +256,17 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 fixtures = [
-   
 
     {
         "doctype": "Property Setter",
         "filters": [
             ["name", "in", ["Journal Entry-voucher_type-options"]]
         ],
-    }
+    },
+    {
+         "dt": "Custom Field", 
+         "filters":[["name", "in", ['Sales Order-amount_hedge','Bank-bank_type','Sales Order-natural_hedge','Payment Entry-forward_utilization','Payment Entry-forwards','Payment Entry-average_forward_rate','Payment Entry-total_amount_utilized']]]
+      },
+    
 ]
 
